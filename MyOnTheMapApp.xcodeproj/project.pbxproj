@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		A91547711BE1A886001CFDD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547701BE1A886001CFDD2 /* AppDelegate.swift */; };
-		A91547731BE1A886001CFDD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547721BE1A886001CFDD2 /* ViewController.swift */; };
 		A91547761BE1A886001CFDD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91547741BE1A886001CFDD2 /* Main.storyboard */; };
 		A91547781BE1A886001CFDD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A91547771BE1A886001CFDD2 /* Assets.xcassets */; };
 		A915477B1BE1A886001CFDD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91547791BE1A886001CFDD2 /* LaunchScreen.storyboard */; };
 		A91547861BE1A886001CFDD2 /* MyOnTheMapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547851BE1A886001CFDD2 /* MyOnTheMapAppTests.swift */; };
 		A91547911BE1A886001CFDD2 /* MyOnTheMapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547901BE1A886001CFDD2 /* MyOnTheMapAppUITests.swift */; };
+		A91547A51BE1A93E001CFDD2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91547A31BE1A93E001CFDD2 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
+		A91547A61BE1A93E001CFDD2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91547A41BE1A93E001CFDD2 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		A91547A81BE1AC41001CFDD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547A71BE1AC41001CFDD2 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547AA1BE1AC8D001CFDD2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547A91BE1AC8D001CFDD2 /* TableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547AC1BE1ACA8001CFDD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547AB1BE1ACA8001CFDD2 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547AE1BE1B1E3001CFDD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547AD1BE1B1E3001CFDD2 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547B01BE1B1FB001CFDD2 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547AF1BE1B1FB001CFDD2 /* Client.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547B21BE1B225001CFDD2 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B11BE1B225001CFDD2 /* Convenience.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547B41BE1B234001CFDD2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B31BE1B234001CFDD2 /* Student.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547B61BE1B251001CFDD2 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B51BE1B251001CFDD2 /* BorderedButton.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +45,6 @@
 /* Begin PBXFileReference section */
 		A915476D1BE1A886001CFDD2 /* MyOnTheMapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOnTheMapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91547701BE1A886001CFDD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A91547721BE1A886001CFDD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A91547751BE1A886001CFDD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A91547771BE1A886001CFDD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A915477A1BE1A886001CFDD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +55,16 @@
 		A915478C1BE1A886001CFDD2 /* MyOnTheMapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyOnTheMapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91547901BE1A886001CFDD2 /* MyOnTheMapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOnTheMapAppUITests.swift; sourceTree = "<group>"; };
 		A91547921BE1A886001CFDD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A91547A31BE1A93E001CFDD2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A91547A41BE1A93E001CFDD2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A91547A71BE1AC41001CFDD2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A91547A91BE1AC8D001CFDD2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A91547AB1BE1ACA8001CFDD2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A91547AD1BE1B1E3001CFDD2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A91547AF1BE1B1FB001CFDD2 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		A91547B11BE1B225001CFDD2 /* Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
+		A91547B31BE1B234001CFDD2 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		A91547B51BE1B251001CFDD2 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91547A61BE1A93E001CFDD2 /* FBSDKLoginKit.framework in Frameworks */,
+				A91547A51BE1A93E001CFDD2 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +117,11 @@
 		A915476F1BE1A886001CFDD2 /* MyOnTheMapApp */ = {
 			isa = PBXGroup;
 			children = (
+				A91547A11BE1A900001CFDD2 /* Model */,
+				A91547A01BE1A8F8001CFDD2 /* View */,
+				A915479F1BE1A8EB001CFDD2 /* Controller */,
+				A915479E1BE1A8C3001CFDD2 /* Frameworks */,
 				A91547701BE1A886001CFDD2 /* AppDelegate.swift */,
-				A91547721BE1A886001CFDD2 /* ViewController.swift */,
 				A91547741BE1A886001CFDD2 /* Main.storyboard */,
 				A91547771BE1A886001CFDD2 /* Assets.xcassets */,
 				A91547791BE1A886001CFDD2 /* LaunchScreen.storyboard */,
@@ -123,6 +146,52 @@
 				A91547921BE1A886001CFDD2 /* Info.plist */,
 			);
 			path = MyOnTheMapAppUITests;
+			sourceTree = "<group>";
+		};
+		A915479E1BE1A8C3001CFDD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A91547A31BE1A93E001CFDD2 /* FBSDKCoreKit.framework */,
+				A91547A41BE1A93E001CFDD2 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A915479F1BE1A8EB001CFDD2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A91547A71BE1AC41001CFDD2 /* LoginViewController.swift */,
+				A91547A91BE1AC8D001CFDD2 /* TableViewController.swift */,
+				A91547AB1BE1ACA8001CFDD2 /* MapViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A91547A01BE1A8F8001CFDD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A91547B51BE1B251001CFDD2 /* BorderedButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A91547A11BE1A900001CFDD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A91547A21BE1A907001CFDD2 /* Clients */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A91547A21BE1A907001CFDD2 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				A91547AD1BE1B1E3001CFDD2 /* Constants.swift */,
+				A91547AF1BE1B1FB001CFDD2 /* Client.swift */,
+				A91547B11BE1B225001CFDD2 /* Convenience.swift */,
+				A91547B31BE1B234001CFDD2 /* Student.swift */,
+			);
+			name = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +327,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91547731BE1A886001CFDD2 /* ViewController.swift in Sources */,
+				A91547B61BE1B251001CFDD2 /* BorderedButton.swift in Sources */,
+				A91547A81BE1AC41001CFDD2 /* LoginViewController.swift in Sources */,
+				A91547B21BE1B225001CFDD2 /* Convenience.swift in Sources */,
+				A91547B01BE1B1FB001CFDD2 /* Client.swift in Sources */,
+				A91547B41BE1B234001CFDD2 /* Student.swift in Sources */,
 				A91547711BE1A886001CFDD2 /* AppDelegate.swift in Sources */,
+				A91547AC1BE1ACA8001CFDD2 /* MapViewController.swift in Sources */,
+				A91547AA1BE1AC8D001CFDD2 /* TableViewController.swift in Sources */,
+				A91547AE1BE1B1E3001CFDD2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +475,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyOnTheMapApp",
+				);
 				INFOPLIST_FILE = MyOnTheMapApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdhmotors.MyOnTheMapApp;
@@ -410,6 +490,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyOnTheMapApp",
+				);
 				INFOPLIST_FILE = MyOnTheMapApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdhmotors.MyOnTheMapApp;

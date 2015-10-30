@@ -23,6 +23,7 @@
 		A91547B21BE1B225001CFDD2 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B11BE1B225001CFDD2 /* Convenience.swift */; settings = {ASSET_TAGS = (); }; };
 		A91547B41BE1B234001CFDD2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B31BE1B234001CFDD2 /* Student.swift */; settings = {ASSET_TAGS = (); }; };
 		A91547B61BE1B251001CFDD2 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B51BE1B251001CFDD2 /* BorderedButton.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547B81BE30770001CFDD2 /* InformationPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B71BE30770001CFDD2 /* InformationPostViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A91547B11BE1B225001CFDD2 /* Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		A91547B31BE1B234001CFDD2 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		A91547B51BE1B251001CFDD2 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		A91547B71BE30770001CFDD2 /* InformationPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				A91547A71BE1AC41001CFDD2 /* LoginViewController.swift */,
 				A91547A91BE1AC8D001CFDD2 /* TableViewController.swift */,
 				A91547AB1BE1ACA8001CFDD2 /* MapViewController.swift */,
+				A91547B71BE30770001CFDD2 /* InformationPostViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				A91547AC1BE1ACA8001CFDD2 /* MapViewController.swift in Sources */,
 				A91547AA1BE1AC8D001CFDD2 /* TableViewController.swift in Sources */,
 				A91547AE1BE1B1E3001CFDD2 /* Constants.swift in Sources */,
+				A91547B81BE30770001CFDD2 /* InformationPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to Udacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azv-mY-2eD">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="grK-HL-V3w"/>
+                                    <constraint firstAttribute="height" constant="21" id="grK-HL-V3w">
+                                        <variation key="widthClass=compact" constant="25"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -271,6 +273,48 @@
             </objects>
             <point key="canvasLocation" x="66" y="404"/>
         </scene>
+        <!--InformationPostView-->
+        <scene sceneID="zye-6T-Eac">
+            <objects>
+                <viewController storyboardIdentifier="InformationPostViewController" title="InformationPostView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W5u-xU-fhR" userLabel="InformationPostView" customClass="InformationPostViewController" customModule="MyOnTheMapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BJ0-tv-Vdl"/>
+                        <viewControllerLayoutGuide type="bottom" id="L8m-Yk-7yY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AFh-Yn-T46">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQL-97-jTe" userLabel="HeaderTextLabel">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="86" width="277" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xQL-97-jTe"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xQL-97-jTe"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="lRH-Xw-lmB"/>
+                    <connections>
+                        <outlet property="headerTextLabel" destination="xQL-97-jTe" id="P9m-hr-YzB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ne0-LY-4e2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="-299"/>
+        </scene>
         <!--TabBarNavagation-->
         <scene sceneID="NOa-Cz-wbv">
             <objects>
@@ -324,7 +368,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaB-DJ-5Ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2433" y="743"/>
+            <point key="canvasLocation" x="1170" y="1154"/>
+        </scene>
+        <!--InformationPostNavigation-->
+        <scene sceneID="hi3-aI-Xvc">
+            <objects>
+                <navigationController storyboardIdentifier="InformationPostNavigationController" title="InformationPostNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HwR-G4-A9g" userLabel="InformationPostNavigation" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jPV-E3-rkH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="W5u-xU-fhR" kind="relationship" relationship="rootViewController" id="K8h-D9-jhz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMN-ED-CmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415.5" y="-299"/>
         </scene>
         <!--TableView-->
         <scene sceneID="1Nh-Ky-ABg">
@@ -383,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdr-Dr-WeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2433" y="82"/>
+            <point key="canvasLocation" x="415.5" y="1154"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="Uw4-KZ-FNf">

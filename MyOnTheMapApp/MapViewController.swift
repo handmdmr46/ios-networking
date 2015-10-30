@@ -89,7 +89,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func informationPostingViewButtonTouchUp() {
-        print("informationPostingViewButtonTouchUp")
+        
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("InformationPostViewController") as! InformationPostViewController
+        
+        let navigation = UINavigationController()
+        
+        navigation.pushViewController(controller, animated: true)
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(navigation, animated: true, completion: nil)
+        })
     }
     
     

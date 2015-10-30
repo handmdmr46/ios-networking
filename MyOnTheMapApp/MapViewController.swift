@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import SafariServices
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, SFSafariViewControllerDelegate {
     
     // MARK: properties
     
@@ -110,21 +111,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     */
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
-        // TODO: get safari web view
-        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-        
         let urlString = view.annotation?.subtitle!
         let url = NSURL(string: urlString!)!
-        let urlRequest = NSURLRequest(URL: url)
         
-       // vc.urlRequest = urlRequest
-       // vc.navagationTitle = urlString
+        let safari = SFSafariViewController(URL: url)
+        safari.delegate = self
         
-        let nav = UINavigationController()
-        
-      //  nav.pushViewController(vc, animated: true)
-        
-        self.presentViewController(nav, animated: true, completion: nil)
+        presentViewController(safari, animated: true, completion: nil)
     }
     
     // MARK: location manager functions

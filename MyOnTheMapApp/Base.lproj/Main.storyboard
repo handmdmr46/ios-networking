@@ -274,7 +274,7 @@
         <!--TabBarNavagation-->
         <scene sceneID="NOa-Cz-wbv">
             <objects>
-                <navigationController storyboardIdentifier="TabBarNavagationController" title="TabBarNavagation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Icm-tJ-pYt" userLabel="TabBarNavagation" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TabBarNavigationController" title="TabBarNavagation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Icm-tJ-pYt" userLabel="TabBarNavagation" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OQB-us-hZH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

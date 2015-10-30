@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate  {
     
     // MARK: properties
     var students: [Student] = [Student]()
@@ -80,25 +81,15 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        //TODO: open web view - launch Safari and direct it to the link associated with the student
-        
-        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-        
         let student = students[indexPath.row]
+        
         let urlString = student.mediaURL
         let url = NSURL(string: urlString)!
-        let urlRequest = NSURLRequest(URL: url)
         
-      //  vc.urlRequest = urlRequest
-      //  vc.navagationTitle = urlString
+        let safari = SFSafariViewController(URL: url)
+        safari.delegate = self
         
-        let nav = UINavigationController()
-        
-     //   nav.pushViewController(vc, animated: true)
-        
-        self.presentViewController(nav, animated: true, completion: nil)
-        
-        //self.navigationController!.pushViewController(vc, animated: true)
+        presentViewController(safari, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

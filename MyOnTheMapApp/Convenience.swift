@@ -11,6 +11,9 @@ import UIKit
 
 extension Client {
     
+    /*
+    **
+    */
     func authenticateWithViewController(username: String, password: String, completionHandler: (success: Bool, errorString: String?) -> Void) {
         
         self.postUdacitySessionID(username, password: password, completionHandler: { (success, errorString) in
@@ -33,6 +36,9 @@ extension Client {
         })
     }
     
+    /*
+    **
+    */
     func facebookAuthenicationWithViewController(tokenString: String, completionHandler: (success: Bool, errorString: String?) -> Void) {
         
         self.postUdacitySessionIdWithFacebookLogin(tokenString, completionHandler: { (success, errorString) in
@@ -102,6 +108,9 @@ extension Client {
         
     }
     
+    /*
+    **
+    */
     func postUdacitySessionIdWithFacebookLogin(tokenString: String, completionHandler: (success: Bool, errorString: String?) -> Void) {
         let method = Client.Methods.UdacitySession
         
@@ -232,6 +241,7 @@ extension Client {
     ** logout from udacity, end udacity session
     */
     func deleteUdacitySession(completionHandler: (success: Bool, logoutResponse: String?, errorString: String?) -> Void) {
+        
         taskForDELETEMethod(Client.Methods.UdacitySession, completionHandler: { (result, error) in
             
             if let error = error {

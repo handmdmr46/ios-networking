@@ -29,8 +29,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.parentViewController!.navigationItem.title = "Students Map"
         self.parentViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logoutButtonTouchUp")
         
-        barButtonArray.append(UIBarButtonItem(title: "Post", style: .Plain, target: self, action: "informationPostingViewButtonTouchUp"))
-        barButtonArray.append(UIBarButtonItem(title: "Reload", style: .Plain, target: self, action: "refreshButtonTouchUp"))
+        barButtonArray.append(UIBarButtonItem(image: UIImage(named: "plus"), style: .Plain, target: self, action: "informationPostingViewButtonTouchUp"))
+        barButtonArray.append(UIBarButtonItem(image: UIImage(named: "reload"), style: .Plain, target: self, action: "reloadStudentsButtonTouchUp"))
         
         self.parentViewController!.navigationItem.rightBarButtonItems = barButtonArray
         
@@ -67,11 +67,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // MARK: actions, called from bar button items
     
     func logoutButtonTouchUp() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        
+        Client.sharedInstance().deleteUdacitySession({ (success, logoutResponse, errorString) in
+            
+            if success {
+                vc.debugTextLabel.text = "Logged Out " + logoutResponse!
+            } else {
+                vc.debugTextLabel.text = "Logged Out ERROR"
+            }
+        })
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(vc, animated: true, completion: nil)
+        })
     }
     
-    func refreshButtonTouchUp() {
-        print("refreshButtonTouchUp")
+    func reloadStudentsButtonTouchUp() {
+        print("reloadStudentsButtonTouchUp")
     }
     
     func informationPostingViewButtonTouchUp() {

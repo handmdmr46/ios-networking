@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: BorderedButton!
-    @IBOutlet weak var debugTextLabel: UILabel!
+    @IBOutlet weak var debugTextLabel: UILabel! 
     @IBOutlet weak var headerTextLabel: UILabel!
     @IBOutlet weak var fbLoginButton: BorderedButton!
     var students: [Student] = [Student]()
@@ -42,7 +42,9 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.debugTextLabel.text = ""
+        //self.debugTextLabel.text = ""
+        
+        
     }
     
     // MARK: actions
@@ -125,27 +127,9 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     }
     
     /*
-    ** get web view, udacity account sign up page ---NEEDS FIXED, get cancel or back buttob in top navagation bar!!!!!
+    ** get safari web browser, udacity account sign up page     
     */
     @IBAction func goToUdacitySignUpButtonTouchUp(sender: AnyObject) {
-        
-        /* // test
-        let view = self.storyboard!.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-        
-        let urlString = "https://www.udacity.com/account/auth#!/signup"
-        let url = NSURL(string: urlString)!
-        //let urlRequest = NSURLRequest(URL: url)
-        
-        //view.urlRequest = urlRequest
-        view.url = url
-        view.navagationTitle = "Udacity Account Registration"
-        
-        let navagation = UINavigationController()
-        
-        navagation.pushViewController(view, animated: true)
-        
-        self.presentViewController(navagation, animated: true, completion: nil)
-        */
         
         let urlString = "https://www.udacity.com/account/auth#!/signup"
         let url = NSURL(string: urlString)!

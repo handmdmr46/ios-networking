@@ -73,7 +73,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         Client.sharedInstance().deleteUdacitySession({ (success, logoutResponse, errorString) in
             
             if success {
-                vc.debugTextLabel.text = "Logged Out " + logoutResponse!
+                vc.debugTextLabel.text = "Logged Out"
             } else {
                 vc.debugTextLabel.text = "Logged Out ERROR"
             }
@@ -86,6 +86,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func reloadStudentsButtonTouchUp() {
         print("reloadStudentsButtonTouchUp")
+        
+        Client.sharedInstance().getParseStudentLocationObjects({ (students, error) in
+            
+            if let students = students {
+                
+                self.students = students
+                
+                for student in students {
+                    var annotation: MKPointAnnotation!
+                    annotation = MKPointAnnotation()
+                    let coordinate = CLLocationCoordinate2DMake(student.latitude, student.longitude)
+                    annotation.coordinate = coordinate
+                    annotation.title = student.firstName
+                    annotation.subtitle = student.mediaURL
+                    self.mapView.addAnnotation(annotation)
+                }
+            }
+            
+            self.mapView.reloadInputViews()
+        })
     }
     
     func informationPostingViewButtonTouchUp() {

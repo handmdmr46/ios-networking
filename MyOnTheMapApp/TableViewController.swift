@@ -57,7 +57,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         Client.sharedInstance().deleteUdacitySession({ (success, logoutResponse, errorString) in
             
             if success {
-                vc.debugTextLabel.text = "Logged Out " + logoutResponse!
+                vc.debugTextLabel.text = "Logged Out"
             } else {
                 vc.debugTextLabel.text = "Logged Out ERROR"
             }
@@ -70,6 +70,19 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func reloadStudentsButtonTouchUp() {
         print("reloadStudentsButtonTouchUp")
+        
+        Client.sharedInstance().getParseStudentLocationObjects({ (students, error) in
+            
+            if let students = students {
+                
+                self.students = students
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+                
+            }
+        })
     }
     
     func informationPostingViewButtonTouchUp() {

@@ -23,7 +23,7 @@ class InformationPostViewController: UIViewController {
     }
     
     func cancelInformationPostViewControllerButtonTouchUp() {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     /*

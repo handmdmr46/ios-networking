@@ -344,20 +344,35 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wmj-3c-FXS" userLabel="MapView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="487"/>
-                                </variation>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wmj-3c-FXS" firstAttribute="top" secondItem="iDm-Qe-iQL" secondAttribute="bottom" id="5DI-xT-dAB"/>
+                            <constraint firstItem="wmj-3c-FXS" firstAttribute="leading" secondItem="es6-2u-xi8" secondAttribute="leading" id="D0O-u2-pfU"/>
+                            <constraint firstAttribute="trailing" secondItem="wmj-3c-FXS" secondAttribute="trailing" id="mUn-Xt-65E"/>
+                            <constraint firstItem="wmj-3c-FXS" firstAttribute="bottom" secondItem="AQg-5U-E8r" secondAttribute="top" id="nYL-q7-Y5M"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="wmj-3c-FXS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5DI-xT-dAB"/>
+                                <exclude reference="D0O-u2-pfU"/>
+                                <exclude reference="mUn-Xt-65E"/>
+                                <exclude reference="nYL-q7-Y5M"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="wmj-3c-FXS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5DI-xT-dAB"/>
+                                <include reference="D0O-u2-pfU"/>
+                                <include reference="mUn-Xt-65E"/>
+                                <include reference="nYL-q7-Y5M"/>
                             </mask>
                         </variation>
                     </view>
@@ -419,20 +434,35 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="507"/>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QeP-xC-sZ2" firstAttribute="leading" secondItem="fl7-GV-G9Z" secondAttribute="leading" id="3fJ-g9-HEw"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="QeP-xC-sZ2" secondAttribute="bottom" constant="29" id="E0Q-9h-CtS"/>
+                            <constraint firstItem="QeP-xC-sZ2" firstAttribute="top" secondItem="4Sa-Ce-djf" secondAttribute="bottom" id="lN8-Vx-N9H"/>
+                            <constraint firstAttribute="trailing" secondItem="QeP-xC-sZ2" secondAttribute="trailing" id="rE0-fW-yHa"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="QeP-xC-sZ2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3fJ-g9-HEw"/>
+                                <exclude reference="E0Q-9h-CtS"/>
+                                <exclude reference="lN8-Vx-N9H"/>
+                                <exclude reference="rE0-fW-yHa"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="QeP-xC-sZ2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3fJ-g9-HEw"/>
+                                <include reference="E0Q-9h-CtS"/>
+                                <include reference="lN8-Vx-N9H"/>
+                                <include reference="rE0-fW-yHa"/>
                             </mask>
                         </variation>
                     </view>

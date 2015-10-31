@@ -24,6 +24,7 @@
 		A91547B41BE1B234001CFDD2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B31BE1B234001CFDD2 /* Student.swift */; settings = {ASSET_TAGS = (); }; };
 		A91547B61BE1B251001CFDD2 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B51BE1B251001CFDD2 /* BorderedButton.swift */; settings = {ASSET_TAGS = (); }; };
 		A91547B81BE30770001CFDD2 /* InformationPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B71BE30770001CFDD2 /* InformationPostViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A91547BA1BE46EC6001CFDD2 /* TestMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91547B91BE46EC6001CFDD2 /* TestMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		A91547B31BE1B234001CFDD2 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		A91547B51BE1B251001CFDD2 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		A91547B71BE30770001CFDD2 /* InformationPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostViewController.swift; sourceTree = "<group>"; };
+		A91547B91BE46EC6001CFDD2 /* TestMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				A91547A91BE1AC8D001CFDD2 /* TableViewController.swift */,
 				A91547AB1BE1ACA8001CFDD2 /* MapViewController.swift */,
 				A91547B71BE30770001CFDD2 /* InformationPostViewController.swift */,
+				A91547B91BE46EC6001CFDD2 /* TestMapViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			files = (
 				A91547B61BE1B251001CFDD2 /* BorderedButton.swift in Sources */,
 				A91547A81BE1AC41001CFDD2 /* LoginViewController.swift in Sources */,
+				A91547BA1BE46EC6001CFDD2 /* TestMapViewController.swift in Sources */,
 				A91547B21BE1B225001CFDD2 /* Convenience.swift in Sources */,
 				A91547B01BE1B1FB001CFDD2 /* Client.swift in Sources */,
 				A91547B41BE1B234001CFDD2 /* Student.swift in Sources */,

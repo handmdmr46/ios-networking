@@ -62,6 +62,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        mapView.reloadInputViews()
     }
     
     // MARK: actions, called from bar button items

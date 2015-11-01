@@ -39,6 +39,8 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
         findOnMapSubView.hidden = false
         submitMapSubView.hidden = true
         
+        debugTextLabel.hidden = true
+        
         mapView.delegate = self
 
         self.configureUI()
@@ -52,31 +54,20 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
     ** post student location object, dismiss view controller on success, update debugTextLabel on error
     */
     @IBAction func submitButtonTouchUp(sender: AnyObject) {
-        
-        
-        if (latitude != nil || longitude != nil) {
             
-            Client.sharedInstance().postParseStudentLocationObject(submitMapTextField.text!, latitude: latitude!, longitude: longitude!, completionHandler: { (success, error) in
+        Client.sharedInstance().postParseStudentLocationObject(findOnMapTextField.text!, userURL: submitMapTextField.text!, latitude: latitude!, longitude: longitude!, completionHandler: { (success, error) in
+            
+            if success {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
                 
-                if success {
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                } else {
-                    
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.findOnMapSubView.hidden = false
-                        self.submitMapSubView.hidden = true
-                        self.debugTextLabel.text = "ERROR POST STUDENT: \(error!)"
-                    })
-                }
-            })
-            
-        } else {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.debugTextLabel.text = "latitude longitude are NIL!!!!!!!!"
-            })
-        }
-        
-        
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.findOnMapSubView.hidden = false
+                    self.submitMapSubView.hidden = true
+                    self.debugTextLabel.text = "ERROR POST STUDENT: \(error!)"
+                })
+            }
+        })
     }
     
     /*

@@ -86,6 +86,12 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
         localSearch = MKLocalSearch(request: localSearchRequest)
         localSearch.startWithCompletionHandler({ (response : MKLocalSearchResponse?, error : NSError?) in
             if response == nil {
+                
+                // alert window error response sample
+                /*let alertController = UIAlertController(title: "Search Error", message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)*/
+                
                 dispatch_async(dispatch_get_main_queue(), {
                     self.debugTextLabel.text = "ERROR: place not found, please be more specific"
                     self.debugTextLabel.hidden = false

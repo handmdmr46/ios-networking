@@ -65,6 +65,7 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
                     self.findOnMapSubView.hidden = false
                     self.submitMapSubView.hidden = true
                     self.debugTextLabel.text = "ERROR POST STUDENT: \(error!)"
+                    self.debugTextLabel.hidden = false
                 })
             }
         })
@@ -87,6 +88,7 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
             if response == nil {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.debugTextLabel.text = "ERROR: place not found, please be more specific"
+                    self.debugTextLabel.hidden = false
                 })
                 return
             }
@@ -117,16 +119,6 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
     */
     func configureUI() {
         
-        /* background gradient color */
-//        self.view.backgroundColor = UIColor.clearColor()
-//        let colorTop = UIColor(red: 0.345, green: 0.839, blue: 0.988, alpha: 1.0).CGColor
-//        let colorBottom = UIColor(red: 0.023, green: 0.569, blue: 0.910, alpha: 1.0).CGColor
-//        let backgroundGradient = CAGradientLayer()
-//        backgroundGradient.colors = [colorTop, colorBottom]
-//        backgroundGradient.locations = [0.0, 1.0]
-//        backgroundGradient.frame = view.frame
-//        self.view.layer.insertSublayer(backgroundGradient, atIndex: 0)
-        
         /* header text label */
         findOnMapLabel.font = UIFont(name: "AvenirNext-Medium", size: 24.0)
         findOnMapLabel.textColor = UIColor.whiteColor()
@@ -136,8 +128,7 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
         submitMapLabel.textColor = UIColor.whiteColor()
         submitMapLabel.backgroundColor = UIColor.grayColor()
         
-        /* sub views */
-
+        /* sub view background gradient color*/
         let colorBottom = UIColor(red: 0.345, green: 0.839, blue: 0.988, alpha: 1.0).CGColor
         let colorTop = UIColor(red: 0.023, green: 0.569, blue: 0.910, alpha: 1.0).CGColor
         let backgroundGradient = CAGradientLayer()
@@ -145,12 +136,10 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
         backgroundGradient.locations = [0.0, 1.0]
         backgroundGradient.frame = view.frame
         findOnMapSubView.layer.insertSublayer(backgroundGradient, atIndex: 0)
-
-        
         
         /* Configure debug text label */
-//        debugTextLabel.font = UIFont(name: "AvenirNext-Medium", size: 20)
-//        debugTextLabel.textColor = UIColor.whiteColor()
+        debugTextLabel.font = UIFont(name: "AvenirNext-Medium", size: 20)
+        debugTextLabel.textColor = UIColor.whiteColor()
         
         /* Configure buttons */
         submitMapButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 17.0)

@@ -13,18 +13,20 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var findOnMapLabel : UILabel!
     @IBOutlet weak var submitMapLabel : UILabel!
+    @IBOutlet weak var debugTextLabel : UILabel!
     @IBOutlet weak var findOnMapSubView : UIView!
     @IBOutlet weak var submitMapSubView : UIView!
     @IBOutlet weak var findOnMapButton : BorderedButton!
     @IBOutlet weak var submitMapButton : BorderedButton!
     @IBOutlet weak var findOnMapTextField : UITextField!
     @IBOutlet weak var submitMapTextField : UITextField!
-    
-    
-    var latitude : Double = 45.421362
-    var longitude : Double = -122.644190
-    
     @IBOutlet weak var mapView : MKMapView!
+    var latitude : Double? = nil
+    var longitude : Double? = nil
+    var localSearch : MKLocalSearch!
+    var localSearchRequest : MKLocalSearchRequest!
+    var annotation : MKAnnotation!
+    var annotationPoint : MKPointAnnotation!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,41 +43,84 @@ class InformationPostViewController: UIViewController, MKMapViewDelegate {
 
         self.configureUI()
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        let span = MKCoordinateSpanMake(0.003, 0.003) // within neighborhood block
-        //let span = MKCoordinateSpanMake(0.3, 0.3) // within portland
-        //let span = MKCoordinateSpanMake(3.3, 3.3) // shows a few states
-        //let span = MKCoordinateSpanMake(13.3, 13.3) // shows united states
-        
-        let region = MKCoordinateRegionMake(coordinate, span)
-        self.mapView.setRegion(region, animated:true)
-        
-        var annotation: MKPointAnnotation!
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        annotation.title = "MDH Motors"
-        annotation.subtitle = "Milwaukie, OR"
-        self.mapView.addAnnotation(annotation)
-
-    }
     
     func cancelInformationPostViewControllerButtonTouchUp() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
+    /*
+    ** post student location object, dismiss view controller on success, update debugTextLabel on error
+    */
     @IBAction func submitButtonTouchUp(sender: AnyObject) {
-        findOnMapSubView.hidden = false
-        submitMapSubView.hidden = true
+        
+        
+        if (latitude != nil || longitude != nil) {
+            
+            Client.sharedInstance().postParseStudentLocationObject(submitMapTextField.text!, latitude: latitude!, longitude: longitude!, completionHandler: { (success, error) in
+                
+                if success {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.findOnMapSubView.hidden = false
+                        self.submitMapSubView.hidden = true
+                        self.debugTextLabel.text = "ERROR POST STUDENT: \(error!)"
+                    })
+                }
+            })
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.debugTextLabel.text = "latitude longitude are NIL!!!!!!!!"
+            })
+        }
+        
+        
     }
     
+    /*
+    ** perform map kit local search request, update ui to show SubmitMapSubView, update debugTextLabel on error
+    */
     @IBAction func findOnMapButtonTouchUp() {
-        findOnMapSubView.hidden = true
-        submitMapSubView.hidden = false
+        
+        if mapView.annotations.count != 0 {
+            annotation = self.mapView.annotations[0]
+            self.mapView.removeAnnotation(annotation)
+        }
+        
+        localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = findOnMapTextField.text
+        localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.startWithCompletionHandler({ (response : MKLocalSearchResponse?, error : NSError?) in
+            if response == nil {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.debugTextLabel.text = "ERROR: place not found, please be more specific"
+                })
+                return
+            }
+            
+            self.latitude = response!.boundingRegion.center.latitude
+            self.longitude = response!.boundingRegion.center.longitude
+            let coordinate = CLLocationCoordinate2DMake(self.latitude!, self.longitude!)
+            let span = MKCoordinateSpanMake(0.003, 0.003)
+            let region = MKCoordinateRegionMake(coordinate, span)
+            
+            self.mapView.setRegion(region, animated: true)
+            
+            self.annotationPoint = MKPointAnnotation()
+            self.annotationPoint.coordinate = coordinate
+            self.annotationPoint.title = Client.sharedInstance().userFirstName! + " " + Client.sharedInstance().userLastName!
+            self.annotationPoint.subtitle = self.findOnMapTextField.text
+            self.mapView.addAnnotation(self.annotationPoint)
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.findOnMapSubView.hidden = true
+                self.submitMapSubView.hidden = false
+            })
+        })
     }
+    
     /*
     ** configure user interface example used from udacity tutorial, this is a job for the front end developer, also any class in the view folder
     */

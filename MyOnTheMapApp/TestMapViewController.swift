@@ -47,17 +47,24 @@ class TestMapViewController: UIViewController, MKMapViewDelegate {
         localSearch.startWithCompletionHandler { (response, error) -> Void in
             
             if response == nil{
+                //TODO: error handling for no response
+                
+                // alert window error response sample
+                let alertController = UIAlertController(title: "Search Error", message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                // send error message to a debug text label in FindOnMapSubView
+                
+                
                 return
             }
             
-//            self.pointAnnotation = MKPointAnnotation()
-//            self.pointAnnotation.title = self.textField.text
-//            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: response!.boundingRegion.center.latitude, longitude: response!.boundingRegion.center.longitude)
+            let latitude : Double = response!.boundingRegion.center.latitude
+            let longitude : Double = response!.boundingRegion.center.longitude
             
-//            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
-//            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
-//            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
-            let coordinate = CLLocationCoordinate2D(latitude: response!.boundingRegion.center.latitude, longitude: response!.boundingRegion.center.longitude)
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            
             let span = MKCoordinateSpanMake(0.003, 0.003)
             let region = MKCoordinateRegionMake(coordinate, span)
             self.mapView.setRegion(region, animated:true)
@@ -69,37 +76,7 @@ class TestMapViewController: UIViewController, MKMapViewDelegate {
         }
         
     }
-    func searchTest(){
-        
-        if self.mapView.annotations.count != 0{
-            annotation = self.mapView.annotations[0]
-            self.mapView.removeAnnotation(annotation)
-        }
-        //2
-        localSearchRequest = MKLocalSearchRequest()
-        localSearchRequest.naturalLanguageQuery = textField.text
-        localSearch = MKLocalSearch(request: localSearchRequest)
-        localSearch.startWithCompletionHandler { (response, error) -> Void in
-            
-            if response == nil{
-//                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
-//                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
-//                self.presentViewController(alertController, animated: true, completion: nil)
-                return
-            }
-            //3
-            self.pointAnnotation = MKPointAnnotation()
-            self.pointAnnotation.title = self.textField.text
-//            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
-            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: response!.boundingRegion.center.latitude, longitude: response!.boundingRegion.center.longitude)
-            
-            
-            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
-            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
-            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
-        }
-    }
-
+    
    
 
 }

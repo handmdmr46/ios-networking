@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nnG-zp-NkH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -424,6 +424,25 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DebugTextLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-3p-krj" userLabel="DebugTextLabel">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="161" id="oE5-UV-kDK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="oE5-UV-kDK"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="oE5-UV-kDK"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwG-av-A1W" userLabel="FindOnMapButton" customClass="BorderedButton" customModule="MyOnTheMapApp" customModuleProvider="target">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
@@ -448,6 +467,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="2Sp-Hv-6WM" firstAttribute="leading" secondItem="VfU-Yl-IQW" secondAttribute="leading" id="5pz-mQ-SIi"/>
+                                    <constraint firstItem="rDf-3p-krj" firstAttribute="top" secondItem="4y9-hR-f0V" secondAttribute="bottom" constant="29" id="7nc-gQ-ru6"/>
                                     <constraint firstItem="4y9-hR-f0V" firstAttribute="leading" secondItem="VfU-Yl-IQW" secondAttribute="leadingMargin" id="BqR-rI-5fc"/>
                                     <constraint firstItem="4y9-hR-f0V" firstAttribute="top" secondItem="2Sp-Hv-6WM" secondAttribute="bottom" constant="8" symbolic="YES" id="IsK-Rl-QE2"/>
                                     <constraint firstItem="4y9-hR-f0V" firstAttribute="centerX" secondItem="2Sp-Hv-6WM" secondAttribute="centerX" id="U8r-aF-bym"/>
@@ -457,11 +477,14 @@
                                     <constraint firstItem="hwG-av-A1W" firstAttribute="bottom" secondItem="VfU-Yl-IQW" secondAttribute="bottomMargin" id="h4V-Vp-b1g">
                                         <variation key="widthClass=compact" constant="-31"/>
                                     </constraint>
+                                    <constraint firstItem="rDf-3p-krj" firstAttribute="leading" secondItem="4y9-hR-f0V" secondAttribute="leading" id="kzS-yl-Iwg"/>
+                                    <constraint firstItem="rDf-3p-krj" firstAttribute="trailing" secondItem="4y9-hR-f0V" secondAttribute="trailing" id="q0g-jU-2D8"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="2Sp-Hv-6WM"/>
                                         <exclude reference="4y9-hR-f0V"/>
+                                        <exclude reference="rDf-3p-krj"/>
                                         <exclude reference="hwG-av-A1W"/>
                                     </mask>
                                     <mask key="constraints">
@@ -471,6 +494,9 @@
                                         <exclude reference="BqR-rI-5fc"/>
                                         <exclude reference="IsK-Rl-QE2"/>
                                         <exclude reference="U8r-aF-bym"/>
+                                        <exclude reference="7nc-gQ-ru6"/>
+                                        <exclude reference="kzS-yl-Iwg"/>
+                                        <exclude reference="q0g-jU-2D8"/>
                                         <exclude reference="VGT-ew-EsK"/>
                                         <exclude reference="h4V-Vp-b1g"/>
                                     </mask>
@@ -479,6 +505,7 @@
                                     <mask key="subviews">
                                         <include reference="2Sp-Hv-6WM"/>
                                         <include reference="4y9-hR-f0V"/>
+                                        <include reference="rDf-3p-krj"/>
                                         <include reference="hwG-av-A1W"/>
                                     </mask>
                                     <mask key="constraints">
@@ -488,6 +515,9 @@
                                         <include reference="BqR-rI-5fc"/>
                                         <include reference="IsK-Rl-QE2"/>
                                         <include reference="U8r-aF-bym"/>
+                                        <include reference="7nc-gQ-ru6"/>
+                                        <include reference="kzS-yl-Iwg"/>
+                                        <include reference="q0g-jU-2D8"/>
                                         <include reference="VGT-ew-EsK"/>
                                         <include reference="h4V-Vp-b1g"/>
                                     </mask>
@@ -540,6 +570,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="lRH-Xw-lmB"/>
                     <connections>
+                        <outlet property="debugTextLabel" destination="rDf-3p-krj" id="Z2c-cb-vxq"/>
                         <outlet property="findOnMapButton" destination="hwG-av-A1W" id="P7O-yB-FPH"/>
                         <outlet property="findOnMapLabel" destination="2Sp-Hv-6WM" id="JNe-1E-d7H"/>
                         <outlet property="findOnMapSubView" destination="VfU-Yl-IQW" id="JLM-cm-1Mf"/>

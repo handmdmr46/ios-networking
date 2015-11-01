@@ -112,21 +112,6 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     }
     
     /*
-    ** tester function, remove later
-    */
-    @IBAction func postStudentLocationObjectButtonTouchUp(sender: AnyObject) {
-        
-        Client.sharedInstance().postParseStudentLocationObject({ (success, error) in
-            if success {
-                print("SUCCESS: success true in postStudentLocationObjectButtonTouchUp")
-            } else {
-                print("ERROR: success false in postStudentLocationObjectButtonTouchUp")
-            }
-        })
-        
-    }
-    
-    /*
     ** get safari web browser, udacity account sign up page     
     */
     @IBAction func goToUdacitySignUpButtonTouchUp(sender: AnyObject) {

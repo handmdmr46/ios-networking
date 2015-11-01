@@ -301,7 +301,7 @@ extension Client {
     /*
     ** add student location object
     */
-    func postParseStudentLocationObject(completionHandler: (success: Bool, errorString: String?) -> Void) {
+    func postParseStudentLocationObject(mapString: String, latitude: Double, longitude: Double, completionHandler: (success: Bool, errorString: String?) -> Void) {
         
         let baseURLString = Client.Constants.ParseBaseURL
         let method = Client.Methods.ParseStudentLocation
@@ -311,10 +311,10 @@ extension Client {
             Client.HTTPBodyKeys.ParseUniqueKey : self.userID,
             Client.HTTPBodyKeys.ParseFirstName : self.userFirstName,
             Client.HTTPBodyKeys.ParseLastName : self.userLastName,
-            Client.HTTPBodyKeys.ParseMapString : self.mapString,
+            Client.HTTPBodyKeys.ParseMapString : mapString,
             Client.HTTPBodyKeys.ParseMediaURL : self.userImageURL,
-            Client.HTTPBodyKeys.ParseLatitude : self.latitude,
-            Client.HTTPBodyKeys.ParseLongitude : self.longitude
+            Client.HTTPBodyKeys.ParseLatitude : latitude,
+            Client.HTTPBodyKeys.ParseLongitude : longitude
         ]
         
         let httpHeader : [String : String] = [

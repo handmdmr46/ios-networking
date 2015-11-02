@@ -10,7 +10,8 @@ import Foundation
 
 class Client : NSObject {
     
-    // MARK: propeerties
+    // MARK: properties
+    
     var session : NSURLSession
     
     var sessionID : String? = nil

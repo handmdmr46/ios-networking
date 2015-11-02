@@ -42,7 +42,7 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        //self.debugTextLabel.text = ""
+        self.debugTextLabel.text = ""
         
         
     }

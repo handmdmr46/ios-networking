@@ -11,11 +11,6 @@ import MapKit
 struct Student {
     
     // MARK: properties
-    /*var objectID : String? = nil
-    var uniqueKey : String? = nil
-    var firstName : String? = nil
-    var lastName : String? = nil
-    var mapString : String? = nil*/
     
     var objectID = ""
     var uniqueKey = ""

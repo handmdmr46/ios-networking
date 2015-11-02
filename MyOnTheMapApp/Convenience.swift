@@ -12,7 +12,7 @@ import UIKit
 extension Client {
     
     /*
-    **
+    ** login to udacity, get udacity user info
     */
     func authenticateWithViewController(username: String, password: String, completionHandler: (success: Bool, errorString: String?) -> Void) {
         
@@ -37,7 +37,7 @@ extension Client {
     }
     
     /*
-    **
+    ** login with facebook to udacity, get udacity user info
     */
     func facebookAuthenicationWithViewController(tokenString: String, completionHandler: (success: Bool, errorString: String?) -> Void) {
         
@@ -109,7 +109,7 @@ extension Client {
     }
     
     /*
-    **
+    ** login to udacity with facebook, start udacity login session
     */
     func postUdacitySessionIdWithFacebookLogin(tokenString: String, completionHandler: (success: Bool, errorString: String?) -> Void) {
         let method = Client.Methods.UdacitySession
@@ -299,7 +299,7 @@ extension Client {
     }
     
     /*
-    ** add student location object
+    ** post student location object
     */
     func postParseStudentLocationObject(mapString: String, userURL: String, latitude: Double, longitude: Double, completionHandler: (success: Bool, errorString: String?) -> Void) {
         

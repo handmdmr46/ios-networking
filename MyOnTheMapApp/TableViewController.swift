@@ -21,7 +21,6 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
-        // TODO: create and set logout button, create upload button and action
         self.parentViewController!.navigationItem.title = "Students"
         self.parentViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logoutButtonTouchUp")
         
@@ -52,19 +51,17 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func logoutButtonTouchUp() {
         
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-        
         Client.sharedInstance().deleteUdacitySession({ (success, logoutResponse, errorString) in
             
             if success {
-                vc.debugTextLabel.text = "Logged Out"
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
             } else {
-                vc.debugTextLabel.text = "Logged Out ERROR"
+                let alertController = UIAlertController(title: "Logout Error", message: "Logout attempt failed please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
-        })
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            self.presentViewController(vc, animated: true, completion: nil)
         })
     }
     
@@ -107,7 +104,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as UITableViewCell!
         
         cell.textLabel?.text = "STUDENT: " + student.firstName + " " + student.lastName + "\nFROM: \(student.mapString) \nURL: \(student.mediaURL)"
-        //cell.detailTextLabel?.text = student.mapString
+
         return cell
     }
     

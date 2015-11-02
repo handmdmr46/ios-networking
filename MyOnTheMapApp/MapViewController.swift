@@ -60,28 +60,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        mapView.reloadInputViews()
-    }
-    
     // MARK: actions, called from bar button items
     
     func logoutButtonTouchUp() {
         
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-        
         Client.sharedInstance().deleteUdacitySession({ (success, logoutResponse, errorString) in
             
             if success {
-                vc.debugTextLabel.text = "Logged Out"
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
             } else {
-                vc.debugTextLabel.text = "Logged Out ERROR"
+                let alertController = UIAlertController(title: "Logout Error", message: "Logout attempt failed please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
-        })
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            self.presentViewController(vc, animated: true, completion: nil)
         })
     }
     
